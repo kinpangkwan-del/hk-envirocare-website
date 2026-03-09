@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>真實案例 - HK EnviroCare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .case-filters {
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .filter-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            margin: 0 5px 10px;
+            border: 2px solid #27ae60;
+            background: transparent;
+            color: #27ae60;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .case-study {
+            padding: 60px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .case-study:last-child {
+            border-bottom: none;
+        }
+        
+        .case-content {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .case-gallery {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .case-details {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .case-details h3 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        
+        .case-meta {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .meta-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .meta-item:last-child {
+            border-bottom: none;
+        }
+        
+        .meta-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .testimonial {
+            background: #27ae60;
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+        
+        .testimonial p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            text-align: right;
+        }
+        
+        .results-chart {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 30px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .result-item {
+            text-align: center;
+        }
+        
+        .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        .result-label {
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        .result-arrow {
+            font-size: 2rem;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 (同上) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">HK <span>EnviroCare</span></div>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於我們</a>
+                <a href="certifications.html">產品認證</a>
+                <a href="cases.html" class="active">真實案例</a>
+                <a href="pricing.html">服務收費</a>
+                <a href="contact.html">聯絡我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 頁面標題 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>真實案例</h1>
+            <p>睇吓我哋點樣幫客戶解決甲醛問題</p>
+        </div>
+    </section>
+
+    <!-- 案例過濾 -->
+    <section class="case-filters">
+        <div class="container">
+            <button class="filter-btn active" onclick="filterCases('all')">全部案例</button>
+            <button class="filter-btn" onclick="filterCases('residential')">住宅</button>
+            <button class="filter-btn" onclick="filterCases('office')">辦公室</button>
+            <button class="filter-btn" onclick="filterCases('commercial')">商鋪</button>
+            <button class="filter-btn" onclick="filterCases('school')">學校/幼稚園</button>
+        </div>
+    </section>
+
+    <!-- 案例 1：住宅 -->
+    <section class="case-study" data-category="residential">
+        <div class="container">
+            <div class="case-content">
+                <div class="case-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600" alt="客廳 Before">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600" alt="客廳 After">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=600" alt="主人房">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea?auto=format&fit=crop&w=600" alt="兒童房">
+                        </div>
+                    </div>
+                </div>
+                <div class="case-details">
+                    <h3>北角半山 - 海天峰住宅</h3>
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">項目類型：</span>
+                            <span>私人住宅 (1,200呎)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">施工日期：</span>
+                            <span>2024年2月</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">客戶背景：</span>
+                            <span>剛完成全屋裝修，家有2歲小朋友</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">主要污染源：</span>
+                            <span>新造衣櫃、地板、牆身油漆</span>
+                        </div>
+                    </div>
+                    
+                    <div class="results-chart">
+                        <div class="result-item">
+                            <div class="result-value">0.28 ppm</div>
+                            <div class="result-label">施工前</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-item">
+                            <div class="result-value">0.03 ppm</div>
+                            <div class="result-label">施工後</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>裝修完之後，成間屋都有一股好大嘅「裝修味」，我哋本身諗住通風幾個月先搬。但因為租約就快完，好頭痛。朋友介紹HK EnviroCare，佢哋嚟檢測先知甲醛超標成6倍！施工後即日已經冇晒味，一星期後複檢完全合格，我哋安心帶小朋友搬入去。多謝晒成個團隊！</p>
+                        <div class="testimonial-author">- 陳先生 & 陳太</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例 2：辦公室 -->
+    <section class="case-study" data-category="office">
+        <div class="container">
+            <div class="case-content">
+                <div class="case-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=600" alt="辦公室開放區">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600" alt="會議室">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&w=600" alt="經理房">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600" alt="茶水間">
+                        </div>
+                    </div>
+                </div>
+                <div class="case-details">
+                    <h3>中環國際金融中心 - 金融公司辦公室</h3>
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">項目類型：</span>
+                            <span>商業辦公室 (5,000呎)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">施工日期：</span>
+                            <span>2024年1月</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">客戶背景：</span>
+                            <span>全新裝修，員工投訴有異味</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">主要污染源：</span>
+                            <span>新地毯、傢俬、隔間牆</span>
+                        </div>
+                    </div>
+                    
+                    <div class="results-chart">
+                        <div class="result-item">
+                            <div class="result-value">0.35 ppm</div>
+                            <div class="result-label">施工前</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-item">
+                            <div class="result-value">0.04 ppm</div>
+                            <div class="result-label">施工後</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>公司裝修後，同事成日話頭痛、眼澀，仲有同事皮膚敏感。我哋 management 好擔心係「病態建築症候群」。搵HK EnviroCare嚟檢測，發現甲醛嚴重超標。佢哋安排喺週末施工，完全唔影響我哋日常運作。而家同事話 office 空氣清新咗好多，工作效率都高咗！</p>
+                        <div class="testimonial-author">- 李小姐 (人力資源經理)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例 3：學校/幼稚園 -->
+    <section class="case-study" data-category="school">
+        <div class="container">
+            <div class="case-content">
+                <div class="case-gallery">
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=600" alt="幼稚園課室">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600" alt="活動室">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1490127252417-7c393f993ee3?auto=format&fit=crop&w=600" alt="圖書角">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1591123120675-6f7f1aae0e5b?auto=format&fit=crop&w=600" alt="睡房">
+                        </div>
+                    </div>
+                </div>
+                <div class="case-details">
+                    <h3>銅鑼灣維多利亞幼稚園</h3>
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">項目類型：</span>
+                            <span>教育機構 (3,500呎)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">施工日期：</span>
+                            <span>2023年12月</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">客戶背景：</span>
+                            <span>校舍翻新，為學生提供安全環境</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">主要污染源：</span>
+                            <span>新課桌椅、地墊、油漆</span>
+                        </div>
+                    </div>
+                    
+                    <div class="results-chart">
+                        <div class="result-item">
+                            <div class="result-value">0.18 ppm</div>
+                            <div class="result-label">施工前</div>
+                        </div>
+                        <div class="result-arrow">→</div>
+                        <div class="result-item">
+                            <div class="result-value">0.02 ppm</div>
+                            <div class="result-label">施工後</div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>我哋校監對小朋友嘅健康好著緊，所以校舍翻新後特別要求做除甲醛。HK EnviroCare 嘅團隊好專業，用嘅藥劑有齊國際認證，我哋好放心。施工後檢測結果遠低於標準，家長們都好安心。多謝你哋為小朋友嘅健康把關！</p>
+                        <div class="testimonial-author">- 張校長</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 簡單嘅 JavaScript 過濾功能 -->
+    <script>
+        function filterCases(category) {
+            // 更新按鈕狀態
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 過濾案例
+            const cases = document.querySelectorAll('.case-study');
+            cases.forEach(case_ => {
+                if (category === 'all' || case_.dataset.category === category) {
+                    case_.style.display = 'block';
+                } else {
+                    case_.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!-- 底部 (同上) -->
+    <footer class="footer">
+        <!-- 同之前一樣 -->
+    </footer>
+</body>
+</html>
