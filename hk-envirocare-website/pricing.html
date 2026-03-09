@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務收費 - HK EnviroCare</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .pricing-intro {
+            padding: 60px 0;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        
+        .pricing-table {
+            padding: 80px 0;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pricing-card.popular {
+            border: 3px solid #27ae60;
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            right: 30px;
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0 0 10px 10px;
+            font-weight: bold;
+        }
+        
+        .pricing-header {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        
+        .price small {
+            font-size: 1rem;
+            color: #ecf0f1;
+        }
+        
+        .pricing-features {
+            padding: 30px;
+        }
+        
+        .feature-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-icon {
+            color: #27ae60;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .pricing-footer {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+        
+        .pricing-note {
+            background: #f9f9f9;
+            padding: 60px 0;
+        }
+        
+        .note-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .faq {
+            padding: 80px 0;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .faq-question::before {
+            content: "Q: ";
+            color: #27ae60;
+        }
+        
+        .faq-answer {
+            color: #7f8c8d;
+            padding-left: 25px;
+        }
+        
+        .faq-answer::before {
+            content: "A: ";
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .disclaimer {
+            background: #fff3cd;
+            color: #856404;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 導航列 (同上) -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">HK <span>EnviroCare</span></div>
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="about.html">關於我們</a>
+                <a href="certifications.html">產品認證</a>
+                <a href="cases.html">真實案例</a>
+                <a href="pricing.html" class="active">服務收費</a>
+                <a href="contact.html">聯絡我們</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 頁面標題 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>服務收費</h1>
+            <p>透明報價，絕無隱藏收費</p>
+        </div>
+    </section>
+
+    <!-- 收費介紹 -->
+    <section class="pricing-intro">
+        <div class="container">
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                我哋嘅收費係根據實用面積計算，以下為參考價格。<br>
+                最終報價需視乎現場實際情況，歡迎預約免費上門檢測及報價。
+            </p>
+        </div>
+    </section>
+
+    <!-- 收費表 -->
+    <section class="pricing-table">
+        <div class="container">
+            <div class="card-grid">
+                <!-- 基本計劃 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>住宅基本方案</h3>
+                        <div class="price">$28<span small>/呎</span></div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 適合 800呎以下單位
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 日本進口光觸媒
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 免費甲醛檢測 (5點)
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 施工後複檢
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 3個月保固
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✗</span> 窗簾/布藝處理
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✗</span> 傢俬內部處理
+                        </div>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="contact.html" class="btn">預約免費檢測</a>
+                    </div>
+                </div>
+                
+                <!-- 專業計劃 (最受歡迎) -->
+                <div class="pricing-card popular">
+                    <div class="popular-badge">最受歡迎</div>
+                    <div class="pricing-header">
+                        <h3>住宅專業方案</h3>
+                        <div class="price">$38<span small>/呎</span></div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 適合任何面積單位
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 日本進口光觸媒 (PIAJ認證)
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 免費甲醛檢測 (10點)
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 施工後複檢
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 窗簾/布藝處理
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 傢俬內部處理
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 5年保固
+                        </div>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="contact.html" class="btn">預約免費檢測</a>
+                    </div>
+                </div>
+                
+                <!-- 商用計劃 -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>商業方案</h3>
+                        <div class="price">$45<span small>/呎</span></div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 辦公室/商鋪/學校
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 日本進口光觸媒 (PIAJ認證)
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 詳細檢測報告
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 施工後複檢
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 可安排非辦公時間施工
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">✓</span> 1年保固
+                        </div>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="contact.html" class="btn">預約免費檢測</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 其他服務 -->
+    <section class="pricing-note">
+        <div class="container">
+            <div class="note-box">
+                <h3 style="color: #2c3e50; margin-bottom: 20px;">其他服務收費</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div>
+                        <h4 style="color: #27ae60;">單獨甲醛檢測</h4>
+                        <p>住宅：$1,800/次 (10個檢測點)</p>
+                        <p>商業：$2,500/次 (20個檢測點)</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #27ae60;">新車除甲醛</h4>
+                        <p>私家車：$1,500/架</p>
+                        <p>7人車：$2,000/架</p>
+                    </div>
+                    <div>
+                        <h4 style="color: #27ae60;">單件傢俬處理</h4>
+                        <p>衣櫃/書櫃：$500/件</p>
+                        <p>梳化/床褥：$600/件</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常見問題 -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>常見問題</h2>
+                <p>關於收費，你可能想知多啲</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">點解收費以實用面積計算？</div>
+                    <div class="faq-answer">因為甲醛主要來源於室內嘅裝修材料同傢俬，實用面積愈大，需要處理嘅表面面積就愈多。我哋嘅收費係反映實際施工範圍同藥劑用量。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">最終報價同參考價會有分別嗎？</div>
+                    <div class="faq-answer">參考價係根據一般單位嘅平均情況制定。最終報價會喺免費上門檢測後，根據實際情況（如單位間隔、傢俬數量、污染程度等）提供準確報價。我哋保證報價後唔會再有隱藏收費。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">有冇最低消費？</div>
+                    <div class="faq-answer">住宅服務最低消費為$3,800，商業服務最低消費為$6,800。低於呢個面積嘅細單位，我哋會按最低消費收費。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">付款方式係點？</div>
+                    <div class="faq-answer">我哋接受現金、銀行轉賬、轉數快(FPS)、信用卡。確認預約時需付30%訂金，尾款喺施工完成、檢測合格後先收取。</div>
+                </div>
+                
+                <div class="disclaimer">
+                    <strong>⚠️ 溫馨提示：</strong> 以上價格僅供參考，最終收費以專業技術人員上門檢測後嘅報價為準。我哋建議客戶喺裝修完成、傢俬入場後先安排除甲醛服務，以達致最佳效果。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 (同上) -->
+    <footer class="footer">
+        <!-- 同之前一樣 -->
+    </footer>
+</body>
+</html>
